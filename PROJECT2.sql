@@ -88,11 +88,6 @@ from pricedata);
 
 
 
-/*14 Give a complete list ordered by wallet profitability (whether people have made or lost money)*/
-
-
-
-
 
 
 

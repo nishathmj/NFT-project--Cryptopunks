@@ -11,33 +11,18 @@ SELECT COUNT(*) AS total_sales_during_this_period FROM pricedata;
 
 
 
-
 /*2 Return the top 5 most expensive transactions (by USD price) for this data set.
  Return the name, ETH price, and USD price, as well as the date.*/
  SELECT name, eth_price, event_date, usd_price 
  FROM pricedata ORDER BY usd_price DESC LIMIT 5;
  
- 
- 
- 
+
  
  /*3 Return a table with a row for each transaction with an event column, a USD price column, and 
  a moving average of USD price that averages the last 50 transactions.*/
  SELECT event_date, usd_price, 
  AVG(usd_price) OVER(ORDER BY event_date DESC ROWS BETWEEN 50 preceding AND CURRENT ROW) AS moving_avg
  FROM pricedata; 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -82,20 +67,6 @@ CREATE VIEW 1919_purchases AS
 SELECT * FROM pricedata WHERE buyer_address="0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*8 Create a histogram of ETH price ranges. Round to the nearest hundred value.*/
 SELECT ROUND(eth_price,-2) AS bucket, 
 COUNT(*) AS count,
@@ -104,4 +75,3 @@ FROM pricedata
 GROUP BY bucket
 ORDER BY bucket;
 
-select ROUND(eth_price,-2), eth_price from pricedata;

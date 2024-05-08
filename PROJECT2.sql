@@ -1,5 +1,5 @@
 USE  cryptopunk;
-# SELECT * from pricedata;
+SELECT * from pricedata;
 
 /*9 Return a unioned query that contains the highest price each NFT was bought for and
  a new column called status saying “highest” with a query that has the lowest price each NFT was bought for and 
@@ -42,10 +42,6 @@ from  table1 ORDER BY month_of_the_year)
 
 select month_of_the_year, name, max_overall_per_month AS  max_nft_sold_per_month, max_avg_overall_per_month as max_avg_usd_per_month
 from nft_sold_most_per_month where max_nft>=max_overall_per_month AND avg_usd>=max_avg_overall_per_month ORDER BY month_of_the_year DESC;
-
-#SELECT DATE_FORMAT(event_date, '%y-%m') AS month_of_the_year from pricedata;
-
-
 
 
 
